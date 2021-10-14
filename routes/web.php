@@ -18,14 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return '<h1>Hello</h1>'
-        . 'Selamat datang di webapp saya'
-        . ' Laravel emang keren';
+    return view('tentang');
 });
 
 Route::get('profile', function () {
     $nama = "Riska";
-    return "Nama saya adalah <b>$nama</b>";
+    return view('profile', compact('nama'));
 });
 
 Route::get('post/{id}', function ($a) {
