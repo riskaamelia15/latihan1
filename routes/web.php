@@ -96,3 +96,56 @@ Route::get('pesan/{makanan?}/{minuman?}/{cemilan?}', function ($a = null, $b = n
     return $pesan;
 
 });
+
+//Route DB Seeder
+//model Post
+Route::get('/testmodel', function () {
+    $query = App\Models\Post::all();
+    return $query;
+});
+
+Route::get('/testmodel2/{id}', function ($id) {
+    $query = App\Models\Post::findOrfail($id);
+    return $query;
+});
+
+Route::get('/testmodel3', function () {
+    $query = App\Models\Post::where('title', 'like', '%i%')->get();
+    return $query;
+});
+
+Route::get('/testmodel4', function () {
+    $query = App\Models\Post::find(1);
+    $query->title = "Ciri keluarga sakinah";
+    $query->save();
+    return $query;
+});
+
+Route::get('/testmodel5', function () {
+    $query = App\Models\Post::find(2)->delete();
+    return $query;
+});
+
+Route::get('/testmodel6', function () {
+    $query = new App\Models\Post();
+    $query->title = "7 Amalan Pembuka Jodoh";
+    $query->content = "Lorem ipsum";
+    $query->save();
+    return $query;
+});
+
+Route::get('/testmodel5', function () {
+    $query = App\Models\Post::all();
+    return view('test-post', compact('query'));
+});
+
+//Route DB Seeder
+//model Mahasiswa dan Dosen
+Route::get('/data-dosen', function () {
+    $query = App\Models\Dosen::all();
+    return view('dosen', compact('query'));
+});
+Route::get('/data-mhs', function () {
+    $query = App\Models\Mahasiswa::all();
+    return view('mhs', compact('query'));
+});

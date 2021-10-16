@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use DB;
 use Illuminate\Database\Seeder;
 
 class PostsSeeder extends Seeder
@@ -13,6 +14,14 @@ class PostsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $post = [
+            ['title' => "Tajwid Menyenangkan", 'content' => "Lorem Ipsum"],
+            ['title' => "Bacaan Sholat", 'content' => "Lorem Ipsum"],
+            ['title' => "Juz Amma", 'content' => "Lorem Ipsum"],
+        ];
+
+        DB::table('posts')->insert($post);
+
     }
+
 }
