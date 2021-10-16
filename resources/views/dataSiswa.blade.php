@@ -15,11 +15,9 @@
         Username :{{ $data['username'] }} <br>
         Email : {{ $data['email'] }} <br>
         Alamat : {{ $data['alamat'] }} <br>
-        Mata pelajaran : <br>
+        Mata pelajaran :
         @foreach ($data['mapel'] as $mapel)
-            Mapel 1 : {{ $mapel }} <br>
-            Mapel 2 : {{ $mapel }} <br>
-            Mapel 3 : {{ $mapel }} <br>
+            <li>{{ $mapel }} <br></li>
         @endforeach
         <hr>
     @endforeach
