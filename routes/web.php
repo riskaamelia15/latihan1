@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -149,3 +150,13 @@ Route::get('/data-mhs', function () {
     $query = App\Models\Mahasiswa::all();
     return view('mhs', compact('query'));
 });
+
+//Route DB Seeder
+//model Barang, Pesanan, Pembelian, Pembeli, Suplier
+
+Route::get('/barang', [MyController::class, 'barangs']);
+Route::get('/pesanan', [MyController::class, 'pesanans']);
+Route::get('/pembelian', [MyController::class, 'pembelians']);
+Route::get('/pembeli', [MyController::class, 'pembelis']);
+Route::get('/suplier', [MyController::class, 'supliers']);
+Route::get('/single/{id}', [MyController::class, 'singles']);

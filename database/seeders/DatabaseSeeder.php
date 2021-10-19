@@ -15,8 +15,15 @@ class DatabaseSeeder extends Seeder
     {
         //memanggil data yang akan dikirim ke db
         $this->call(PostsSeeder::class);
+
         $this->call(DosensSeeder::class);
         $this->call(MahasiswasSeeder::class);
+
+        $this->call(BarangsSeeder::class);
+        $this->call(PembeliansSeeder::class);
+        $this->call(PembelisSeeder::class);
+        $this->call(PesanansSeeder::class);
+        $this->call(SupliersSeeder::class);
 
         $this->command->info("Sample Data Sudah Terisi");
     }

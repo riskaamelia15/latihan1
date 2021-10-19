@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreatePembelisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,19 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('posts')) {
+
+        if (Schema::hasTable('pembelis')) {
             return;
         }
 
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('pembelis', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
-            $table->string('content');
+            $table->string('nama');
+            $table->string('jns_kelamin');
+            $table->string('alamat');
+            $table->integer('kode_pos');
+            $table->string('kota');
+            $table->date('tgl_lahir');
             $table->timestamps();
         });
     }
@@ -32,6 +37,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('pembelis');
     }
 }
