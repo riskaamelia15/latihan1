@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
+
 class MyController extends Controller
 {
-    public function barangs($id)
+    public function barangs()
     {
         $query = App\Models\Barang::all();
         return view('toko.barang', compact('query'));
@@ -12,8 +14,8 @@ class MyController extends Controller
 
     public function singles($id)
     {
-        $query = App\Models\Barang::findOrfail($id);
-        return view('toko.barang', compact('query', 'id'));
+        $query = Barang::findOrfail($id);
+        return view('toko.single', compact('query'));
     }
 
     public function pesanans()

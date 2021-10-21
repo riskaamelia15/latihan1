@@ -153,7 +153,6 @@ Route::get('/data-mhs', function () {
 
 //Route DB Seeder
 //model Barang, Pesanan, Pembelian, Pembeli, Suplier
-
 Route::get('/barang', [MyController::class, 'barangs']);
 Route::get('/pesanan', [MyController::class, 'pesanans']);
 Route::get('/pembelian', [MyController::class, 'pembelians']);
