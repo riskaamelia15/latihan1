@@ -158,4 +158,6 @@ Route::get('/pesanan', [MyController::class, 'pesanans']);
 Route::get('/pembelian', [MyController::class, 'pembelians']);
 Route::get('/pembeli', [MyController::class, 'pembelis']);
 Route::get('/suplier', [MyController::class, 'supliers']);
+
+//Route untuk menampilkan data dari view single
 Route::get('/single/{id}', [MyController::class, 'singles']);

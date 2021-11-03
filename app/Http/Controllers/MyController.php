@@ -2,20 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
-
 class MyController extends Controller
 {
     public function barangs()
     {
         $query = App\Models\Barang::all();
         return view('toko.barang', compact('query'));
-    }
-
-    public function singles($id)
-    {
-        $query = Barang::findOrfail($id);
-        return view('toko.single', compact('query'));
     }
 
     public function pesanans()
@@ -40,6 +32,13 @@ class MyController extends Controller
     {
         $query = App\Models\Suplier::all();
         return view('toko.suplier', compact('query'));
+    }
+
+    // function untuk data view single
+    public function singles($id)
+    {
+        $query = App\Models\Barang::findOrfail($id);
+        return view('toko.single', compact('query'));
     }
 
 }
